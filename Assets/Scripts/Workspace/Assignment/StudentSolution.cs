@@ -117,12 +117,44 @@ namespace Assignment
 
         public int AS02_FindMaxLessThan(int[] array, int target)
         {
-            throw new NotImplementedException();
+            int max = int.MinValue;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < target && array[i] > max)
+                {
+                    max = array[i];
+                }
+            }
+
+            return max == int.MinValue ? -1 : max;
         }
 
         public int[] AS03_FindRange(int[] array, int min, int max)
         {
-            throw new NotImplementedException();
+            int count = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] >= min && array[i] <= max)
+                {
+                    count++;
+                }
+            }
+
+            int[] result = new int[count];
+            int index = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] >= min && array[i] <= max)
+                {
+                    result[index] = array[i];
+                    index++;
+                }
+            }
+
+            return result;
         }
 
         #endregion
