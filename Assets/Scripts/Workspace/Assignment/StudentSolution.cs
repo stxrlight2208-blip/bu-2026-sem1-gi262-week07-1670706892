@@ -163,7 +163,29 @@ namespace Assignment
 
         public int[] EX01_FindTargetEnemies(int[] enemyHPs, int mana)
         {
-            throw new NotImplementedException();
+            int count = 0;
+
+            for (int i = 0; i < enemyHPs.Length; i++)
+            {
+                if (enemyHPs[i] <= mana)
+                {
+                    count++;
+                }
+            }
+
+            int[] result = new int[count];
+            int index = 0;
+
+            for (int i = 0; i < enemyHPs.Length; i++)
+            {
+                if (enemyHPs[i] <= mana)
+                {
+                    result[index] = enemyHPs[i];
+                    index++;
+                }
+            }
+
+            return result;
         }
 
         #endregion
